@@ -32,16 +32,45 @@ body {
 * {
   font-family: "Poppins-Regular", serif;
 }
+hr {
+  border: 1px solid var(--Light-grey);
+}
 .main {
   background-color: var(--White);
   max-width: 600px;
-  border-radius: 20px 20px 100% 20px;
+  border-radius: 20px 20px 50% 20px;
   padding: 25px;
 }
 .input-group {
   display: flex;
   flex: 1;
   flex-direction: row;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.input-group > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.input-group > div > label {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--Smokey-grey);
+}
+.input-group > div > input {
+  width: 80px;
+  border-radius: 5px;
+  outline: solid 1px var(--Light-grey);
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.input-group > div > input:focus {
+  outline: solid 1px var(--Light-grey);
+  border: none;
 }
 .view-group > div {
   display: flex;
