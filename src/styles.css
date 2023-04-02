@@ -10,6 +10,11 @@
 body {
   margin: 0;
   background-color: var(--Off-white);
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 @font-face {
   font-family: "Poppins-Regular";
@@ -26,4 +31,32 @@ body {
 }
 * {
   font-family: "Poppins-Regular", serif;
+}
+.main {
+  background-color: var(--White);
+  max-width: 600px;
+  border-radius: 20px 20px 100% 20px;
+  padding: 25px;
+}
+.input-group {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.view-group > div {
+  display: flex;
+  flex-direction: row;
+}
+.view-date {
+  color: var(--Purple);
+  font-family: Poppins-ExtraBold, serif;
+  font-size: 50px;
+  font-style: italic;
+}
+.view-text {
+  color: black;
+  font-size: 50px;
+  font-family: Poppins-ExtraBold, serif;
+  font-weight: bold;
+  font-style: italic;
 }
