@@ -16,6 +16,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @font-face {
   font-family: "Poppins-Regular";
   src: local("Poppins-Reguar"), url(./assets/fonts/Poppins-Regular.ttf);
@@ -32,8 +42,26 @@ body {
 * {
   font-family: "Poppins-Regular", serif;
 }
+.break-line {
+  align-content: center;
+}
 hr {
+  display: inline-block;
   border: 1px solid var(--Light-grey);
+}
+.hr-line {
+  display: inline-block;
+  width: calc(100% - 100px);
+}
+.logo {
+  border-radius: 100%;
+  background-color: var(--Purple);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
 }
 .main {
   background-color: var(--White);
@@ -55,8 +83,8 @@ hr {
 }
 .input-group > div > label {
   font-size: 12px;
-  font-weight: bold;
-  color: var(--Smokey-grey);
+  font-weight: bolder;
+  color: var(--Light-red);
 }
 .input-group > div > input {
   width: 80px;
@@ -67,6 +95,11 @@ hr {
   font-size: 20px;
   font-weight: bold;
   color: black;
+}
+.input-error {
+  color: var(--Light-red);
+  font-style: italic;
+  font-size: 12px;
 }
 .input-group > div > input:focus {
   outline: solid 1px var(--Light-grey);
