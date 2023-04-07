@@ -19,6 +19,6 @@ export class InputGroupComponent {
     this._yearMonthDateServices.MonthChange(event.target.value);
   };
   HandleYearChange = (event: any) => {
-    this._yearMonthDateServices.DateChange(event.target.value);
+    this._yearMonthDateServices.YearChange(event.target.value);
   };
 }

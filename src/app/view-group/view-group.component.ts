@@ -8,9 +8,13 @@ import { YearMonthDateServices } from "../../year-month-date.services";
   styleUrls: ["./view-group.component.css"],
 })
 export class ViewGroupComponent {
-  public subscriptionDate$: Observable<any>;
+  public subscriptionDate$: Observable<number | string>;
+  public subscriptionMonths$: Observable<number | string>;
+  public subscriptionYear$: Observable<number | string>;
 
   constructor(private _yearMonthDateServices: YearMonthDateServices) {
-    this.subscriptionDate$ = this._yearMonthDateServices.execDateChange.pipe(startWith(999));
+    this.subscriptionDate$ = this._yearMonthDateServices.execDateChange.pipe(startWith("--"));
+    this.subscriptionMonths$ = this._yearMonthDateServices.execMonthChange.pipe(startWith("--"));
+    this.subscriptionYear$ = this._yearMonthDateServices.execYearChange.pipe(startWith("--"));
   }
 }
