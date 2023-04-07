@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
 import { YearMonthDateServices } from "../../year-month-date.services";
 
 @Component({
@@ -7,16 +7,19 @@ import { YearMonthDateServices } from "../../year-month-date.services";
   styleUrls: ["./input-group.component.css"],
 })
 export class InputGroupComponent {
-  private _subscription_user_name$: any;
+  @ViewChild("inputErrorMonth") inputErrorMonth: ElementRef | undefined;
 
-  constructor(private _yearMonthDateServices: YearMonthDateServices) {
-    // this._subscription_user_name$ = this._yearMonthDateServices.execDateChange.subscribe((value) => {});
-  }
+  constructor(private _yearMonthDateServices: YearMonthDateServices, private renderer: Renderer2) {}
   HandleDateChange = (event: any) => {
     this._yearMonthDateServices.DateChange(event.target.value);
   };
   HandleMonthChange = (event: any) => {
-    this._yearMonthDateServices.MonthChange(event.target.value);
+    if (event.target.value > 0 && event.target.value <= 12) {
+      this._yearMonthDateServices.MonthChange(event.target.value);
+    } else {
+      this._yearMonthDateServices.MonthChange("--");
+      this.renderer.setProperty(this.inputErrorMonth?.nativeElement, "innerHTML", "Must be valid month");
+    }
   };
   HandleYearChange = (event: any) => {
     this._yearMonthDateServices.YearChange(event.target.value);

@@ -1,17 +1,17 @@
 <div class="input-group">
   <div>
     <label>DAY</label>
-    <input type="number" placeholder="DD" (input)="HandleDateChange($event)" />
-    <span class="input-error">The field is required</span>
+    <input class="input-number" type="number" placeholder="DD" (input)="HandleDateChange($event)" />
+    <span #inputErrorDay class="input-error-day">The field is required</span>
   </div>
   <div>
     <label>MONTH</label>
     <input type="number" placeholder="MM" (input)="HandleMonthChange($event)" />
-    <span class="input-error">The field is required</span>
+    <span #inputErrorMonth class="input-error-month">The field is required</span>
   </div>
   <div>
     <label>YEAR</label>
     <input type="number" placeholder="YYYY" (input)="HandleYearChange($event)" />
-    <span class="input-error">The field is required</span>
+    <span class="input-error-year">The field is required</span>
   </div>
 </div>

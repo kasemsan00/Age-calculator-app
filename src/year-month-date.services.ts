@@ -3,18 +3,18 @@ import { Subject } from "rxjs";
 
 @Injectable()
 export class YearMonthDateServices {
-  execYearChange: Subject<number> = new Subject<number>();
-  execMonthChange: Subject<number> = new Subject<number>();
-  execDateChange: Subject<number> = new Subject<number>();
+  execYearChange: Subject<number | string> = new Subject<number | string>();
+  execMonthChange: Subject<number | string> = new Subject<number | string>();
+  execDateChange: Subject<number | string> = new Subject<number | string>();
 
   constructor() {}
-  YearChange(data: number) {
+  YearChange(data: number | string) {
     this.execYearChange.next(data);
   }
-  MonthChange(data: number) {
+  MonthChange(data: number | string) {
     this.execMonthChange.next(data);
   }
-  DateChange(data: number) {
+  DateChange(data: number | string) {
     this.execDateChange.next(data);
   }
 }
