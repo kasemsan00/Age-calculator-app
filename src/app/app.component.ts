@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -6,8 +7,9 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = "Age-calculator-app";
-  HandleSubmit = () => {
-    console.log("HandleSubmit");
-  };
+  @Output() title = "Age-calculator-app";
+  submitEvent: Subject<any> = new Subject<any>();
+  HandleSubmit() {
+    this.submitEvent.next(null);
+  }
 }

@@ -75,6 +75,7 @@ hr {
 .main {
   background-color: var(--White);
   max-width: 600px;
+  min-width: 450px;
   border-radius: 20px 20px 50% 20px;
   padding: 25px;
 }
@@ -83,7 +84,7 @@ hr {
   flex: 1;
   flex-direction: row;
   gap: 15px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 .input-group > div {
   display: flex;
@@ -92,8 +93,8 @@ hr {
 }
 .input-group > div > label {
   font-size: 12px;
-  font-weight: bolder;
-  color: var(--Light-red);
+  font-weight: bold;
+  color: var(--Off-black);
 }
 .input-group > div > input {
   width: 80px;
@@ -113,7 +114,8 @@ hr {
 .input-error-year {
   color: var(--Light-red);
   font-style: italic;
-  font-size: 12px;
+  font-size: 10px;
+  height: 5px;
 }
 .input-group > div > input:focus {
   outline: solid 1px var(--Light-grey);
